@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math4Free</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #3498db;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .techniques {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .techniques div {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .techniques div:hover {
+            transform: scale(1.05);
+        }
+        .toggle-section {
+            cursor: pointer;
+            color: #3498db;
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Math4Free: Learn Math Easily
+    </header>
+
+    <div class="container">
+        <h2>Welcome to Math4Free!</h2>
+        <p>Math4Free is your go-to resource for learning fundamental and advanced mathematics, all for free! Below you'll find some of the most common techniques and topics in mathematics that you can explore.</p>
+
+        <h2>Common Math Techniques</h2>
+        <div class="techniques">
+            <div>
+                <h3>Algebra</h3>
+                <p>Algebra is the study of mathematical symbols and the rules for manipulating these symbols. It's the foundation for more advanced topics in math.</p>
+            </div>
+            <div>
+                <h3>Calculus</h3>
+                <p>Calculus is the study of change and motion, and it helps to describe dynamic systems. It has two main branches: differential and integral calculus.</p>
+            </div>
+            <div>
+                <h3>Geometry</h3>
+                <p>Geometry is the branch of mathematics concerning the properties and relationships of points, lines, surfaces, and solids.</p>
+            </div>
+            <div>
+                <h3>Trigonometry</h3>
+                <p>Trigonometry deals with the relationships between the angles and sides of triangles. It's essential in many fields like physics and engineering.</p>
+            </div>
+        </div>
+
+        <h2 class="toggle-section">Advanced Techniques (Click to Toggle)</h2>
+        <div class="hidden" id="advanced-techniques">
+            <div class="techniques">
+                <div>
+                    <h3>Linear Algebra</h3>
+                    <p>Linear algebra is the study of vectors, vector spaces, and linear equations. It's widely used in physics, computer science, and economics.</p>
+                </div>
+                <div>
+                    <h3>Statistics</h3>
+                    <p>Statistics involves the collection, analysis, interpretation, presentation, and organization of data.</p>
+                </div>
+                <div>
+                    <h3>Number Theory</h3>
+                    <p>Number theory is the study of integers and the relationships between them. It's often called "higher arithmetic" because of its deep and rich history.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Test Your Math Skills</h2>
+        <p>Want to test your knowledge? Here's a quick question:</p>
+        <div id="quiz-section">
+            <p><strong>What is the derivative of <em>x²</em>?</strong></p>
+            <button class="btn" onclick="showAnswer()">Show Answer</button>
+            <p id="answer" class="hidden">The derivative of x² is 2x.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Math4Free | All Rights Reserved
+    </footer>
+
+    <script>
+        // Toggle advanced techniques
+        document.querySelector('.toggle-section').addEventListener('click', function() {
+            const advancedSection = document.getElementById('advanced-techniques');
+            if (advancedSection.classList.contains('hidden')) {
+                advancedSection.classList.remove('hidden');
+            } else {
+                advancedSection.classList.add('hidden');
+            }
+        });
+
+        // Show answer to quiz
+        function showAnswer() {
+            document.getElementById('answer').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
