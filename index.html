@@ -135,6 +135,9 @@
     </footer>
 
     <script>
+        // Counter to track toggle actions
+        let toggleCount = 0;
+
         // Toggle advanced techniques
         document.querySelector('.toggle-section').addEventListener('click', function() {
             const advancedSection = document.getElementById('advanced-techniques');
@@ -142,6 +145,14 @@
                 advancedSection.classList.remove('hidden');
             } else {
                 advancedSection.classList.add('hidden');
+            }
+
+            // Increment toggle count
+            toggleCount++;
+
+            // If toggled 4 times, redirect to study.html
+            if (toggleCount === 4) {
+                window.location.href = 'study.html';
             }
         });
 
