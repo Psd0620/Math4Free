@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Math Safely</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Study Math Safely</h1>
+        <iframe id="mathIframe" src="math.html"></iframe>
+        <br>
+        <button class="btn" onclick="makeFullscreen()">Go Fullscreen</button>
+    </div>
+
+    <script>
+        // Function to make iframe fullscreen
+        function makeFullscreen() {
+            var iframe = document.getElementById('mathIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        // Obfuscating keypresses by replacing real keys with random data
+        document.addEventListener('keydown', function(event) {
+            event.preventDefault(); // Prevent default key handling
+            // Generate random character
+            let randomKey = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+            console.log('Obfuscated Key: ' + randomKey); // For testing, logs random key
+        });
+
+        // Obfuscating mouse movements by sending random coordinates
+        document.addEventListener('mousemove', function(event) {
+            // Generate random coordinates
+            let randomX = Math.floor(Math.random() * window.innerWidth);
+            let randomY = Math.floor(Math.random() * window.innerHeight);
+            console.log('Obfuscated Mouse Position: (' + randomX + ', ' + randomY + ')'); // For testing
+        });
+    </script>
+</body>
+</html>
